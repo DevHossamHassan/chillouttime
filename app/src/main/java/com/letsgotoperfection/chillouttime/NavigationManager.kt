@@ -1,4 +1,4 @@
-package com.letsgotoperfection.chillouttime.ui
+package com.letsgotoperfection.chillouttime
 
 /**
  * @author hossam.
@@ -10,7 +10,6 @@ import android.app.Activity
 import android.app.Fragment
 import android.app.FragmentManager
 import android.text.TextUtils
-import com.letsgotoperfection.chillouttime.R
 
 object NavigationManager {
 

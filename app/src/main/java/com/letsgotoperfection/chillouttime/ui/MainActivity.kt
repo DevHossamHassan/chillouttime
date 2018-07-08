@@ -1,5 +1,6 @@
 package com.letsgotoperfection.chillouttime.ui
 
+import com.letsgotoperfection.chillouttime.NavigationManager
 import com.letsgotoperfection.chillouttime.R
 import com.letsgotoperfection.chillouttime.ui.base.BaseActivity
 import com.letsgotoperfection.chillouttime.ui.movies.MoviesFragment
