@@ -2,6 +2,7 @@ package com.letsgotoperfection.chillouttime.ui
 
 import com.letsgotoperfection.chillouttime.R
 import com.letsgotoperfection.chillouttime.ui.base.BaseActivity
+import com.letsgotoperfection.chillouttime.ui.movies.MoviesFragment
 
 
 class MainActivity : BaseActivity() {
@@ -15,6 +16,6 @@ class MainActivity : BaseActivity() {
     }
 
     override fun init() {
-        //todo  Navigate to the default fragment
+        NavigationManager.attachAsRoot(this, MoviesFragment())
     }
 }
