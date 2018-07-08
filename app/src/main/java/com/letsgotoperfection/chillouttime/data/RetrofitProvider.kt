@@ -24,7 +24,7 @@ object RetrofitProvider {
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-//                .client(provideOkHttpClient())
+                .client(provideOkHttpClient())
                 .build()
     }
 
