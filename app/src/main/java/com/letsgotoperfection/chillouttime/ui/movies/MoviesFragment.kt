@@ -8,10 +8,12 @@ import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.Toast
+import com.letsgotoperfection.chillouttime.NavigationManager
 import com.letsgotoperfection.chillouttime.R
 import com.letsgotoperfection.chillouttime.listeners.OnRecyclerViewScrollToTheEnd
 import com.letsgotoperfection.chillouttime.models.Movie
 import com.letsgotoperfection.chillouttime.ui.base.BaseFragment
+import com.letsgotoperfection.chillouttime.ui.details.DetailsFragment
 import com.letsgotoperfection.chillouttime.utils.hide
 import com.letsgotoperfection.chillouttime.utils.hideLoadingView
 import com.letsgotoperfection.chillouttime.utils.show
@@ -108,7 +110,7 @@ class MoviesFragment : BaseFragment<MoviesContract.Presenter>(), MoviesContract.
     }
 
     override fun navigateToDetailsFragment(movie: Movie) {
-//        NavigationManager.attach(this.activity, DetailsFragment.newInstance(movie),
-//                false, "DetailsFragment")
+        NavigationManager.attach(this.activity, DetailsFragment.newInstance(movie),
+                false, "DetailsFragment")
     }
 }

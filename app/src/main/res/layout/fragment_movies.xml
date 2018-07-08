@@ -51,10 +51,11 @@
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="4dp"
+                android:paddingStart="@dimen/item_padding"
                 app:layoutManager="android.support.v7.widget.StaggeredGridLayoutManager"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 app:spanCount="2"
+                tools:ignore="RtlSymmetry"
                 tools:listitem="@layout/item_movie"/>
 
         </android.support.v4.widget.SwipeRefreshLayout>

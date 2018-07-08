@@ -3,4 +3,9 @@
     <color name="colorPrimary">#131313</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#e7326f</color>
+
+    <color name="translucent_scrim_top">#77000000</color>
+    <color name="translucent_scrim_top_center">#4d000000</color>
+    <color name="translucent_scrim_bottom">#e5000000</color>
+    <color name="translucent_scrim_bottom_center">#69000000</color>
 </resources>

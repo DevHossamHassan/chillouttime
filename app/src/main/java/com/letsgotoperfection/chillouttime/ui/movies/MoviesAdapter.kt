@@ -34,6 +34,7 @@ class MoviesAdapter(private val presenter: MoviesPresenter, private val itemClic
 
     class HotTracksListHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(movie: Movie, itemClick: (Movie) -> Unit) {
+            itemView.setOnClickListener { itemClick(movie) }
             itemView.tvMovieTitle.text = movie.title
             try {
                 itemView.imgMovie.loadUrl(movie.poster_path, itemView.tvMovieTitle)

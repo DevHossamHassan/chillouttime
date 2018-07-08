@@ -1,5 +1,7 @@
 package com.letsgotoperfection.chillouttime.models
 
+import java.io.Serializable
+
 data class Movie(
         val vote_count: Int,
         val id: Int,
@@ -15,4 +17,4 @@ data class Movie(
         val adult: Boolean,
         val overview: String,
         val release_date: String
-)
+) : Serializable

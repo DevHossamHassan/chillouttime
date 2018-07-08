@@ -11,6 +11,7 @@ import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
+import com.letsgotoperfection.chillouttime.listeners.OnProminentColorReady
 
 
 /**
@@ -38,6 +39,40 @@ fun SwipeRefreshLayout.hideLoadingView() {
     isRefreshing = false
 }
 
+fun ImageView.loadUrl(url: String) {
+    Glide.with(context)
+            .load("https://image.tmdb.org/t/p/w500/$url")
+            .into(this)
+}
+
+fun ImageView.loadUrl(url: String, onProminentColorReady: OnProminentColorReady) {
+    Glide.with(context)
+            .asBitmap()
+            .load("https://image.tmdb.org/t/p/w500/$url")
+            .listener(object : RequestListener<Bitmap> {
+                override fun onResourceReady(
+                        resource: Bitmap?, model: Any?, target: Target<Bitmap>?,
+                        dataSource: DataSource?, isFirstResource: Boolean): Boolean {
+                    if (resource != null) {
+                        val p = Palette.from(resource).generate()
+                        // Pick one of the swatches
+                        val vibrant = p.vibrantSwatch
+                        if (vibrant != null) {
+                            onProminentColorReady.onProminentColorReady(vibrant)
+                        }
+                    }
+                    return false
+                }
+
+                override fun onLoadFailed(
+                        e: GlideException?, model: Any?,
+                        target: com.bumptech.glide.request.target.Target<Bitmap>?,
+                        isFirstResource: Boolean): Boolean {
+                    return false
+                }
+            })
+            .into(this)
+}
 
 fun ImageView.loadUrl(url: String, textView: TextView) {
     Glide.with(context)

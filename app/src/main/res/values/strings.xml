@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">chill out time</string>
     <string name="filter">Filter</string>
+    <string name="send_to">Share movie</string>
 </resources>

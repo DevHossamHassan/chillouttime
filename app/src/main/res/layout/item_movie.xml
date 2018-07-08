@@ -6,9 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="2dp"
-    android:layout_marginEnd="4dp"
-    android:layout_marginTop="4dp"
+    android:layout_marginEnd="@dimen/item_padding"
+    android:layout_marginTop="@dimen/item_padding"
     android:orientation="vertical"
+    android:clickable="true"
+    android:focusable="true"
     android:padding="12dp">
 
     <LinearLayout
@@ -22,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.8"
+            android:clickable="false"
             android:scaleType="fitXY"
             tools:background="@tools:sample/backgrounds/scenic"/>
 
@@ -29,6 +32,8 @@
             android:id="@+id/tvMovieTitle"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:clickable="false"
+            android:focusable="false"
             android:layout_weight="0.2"
             android:gravity="center"
             android:textColor="@android:color/darker_gray"
