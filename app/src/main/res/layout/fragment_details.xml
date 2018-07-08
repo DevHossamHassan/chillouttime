@@ -56,8 +56,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <ImageView
+                    android:id="@+id/imgBack"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="top|start"
+                    android:layout_marginEnd="8dp"
+                    android:padding="6dp"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/ic_back"
+                    tools:visibility="visible"
                 />
+
+            </android.support.v7.widget.Toolbar>
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
@@ -68,15 +83,48 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         >
 
-        <TextView
-            android:id="@+id/txtMovieOverview"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:lineSpacingExtra="8dp"
-            android:padding="@dimen/activity_horizontal_margin"
-            android:textSize="20sp"
-            tools:text="@tools:sample/lorem/random"
-            />
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/activity_horizontal_margin">
+
+                <TextView
+                    android:id="@+id/txtMovieReleaseDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="8dp"
+                    android:textSize="16sp"
+                    tools:text="@tools:sample/date/mmddyy"
+                    />
+
+                <TextView
+                    android:id="@+id/txtMovieRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:lineSpacingExtra="8dp"
+                    android:textSize="16sp"
+                    tools:text="@tools:sample/date/hhmm"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtMovieOverview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="8dp"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:textSize="20sp"
+                android:layout_marginTop="-16dp"
+                tools:text="@tools:sample/lorem/random"
+                />
+        </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
     <android.support.design.widget.FloatingActionButton

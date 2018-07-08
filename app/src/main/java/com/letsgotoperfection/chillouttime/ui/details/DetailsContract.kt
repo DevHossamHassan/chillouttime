@@ -10,9 +10,7 @@ import com.letsgotoperfection.chillouttime.ui.base.BaseContract
  */
 class DetailsContract : BaseContract {
 
-    interface View : BaseContract.View<Fragment> {
-        fun shareContent()
-    }
+    interface View : BaseContract.View<Fragment>
 
     interface Presenter : BaseContract.Presenter {
         fun getExistedMovie(): Movie

@@ -1,9 +1,8 @@
 package com.letsgotoperfection.chillouttime.ui.details
 
-import android.content.Intent
 import android.os.Bundle
-import android.support.v7.widget.Toolbar
 import android.view.View
+import com.letsgotoperfection.chillouttime.NavigationManager
 import com.letsgotoperfection.chillouttime.R
 import com.letsgotoperfection.chillouttime.models.Movie
 import com.letsgotoperfection.chillouttime.ui.base.BaseFragment
@@ -43,36 +42,11 @@ class DetailsFragment : BaseFragment<DetailsContract.Presenter>(), DetailsContra
     private fun setUpViews() {
         collapsingToolbar.title = movie.title
         txtMovieOverview.text = movie.overview
+        txtMovieReleaseDate.text = movie.release_date
+        txtMovieRate.text = movie.vote_average.toString()
         imgMoviePoster.loadUrl(movie.poster_path)
-
-//        btnShare.setOnClickListener {
-//            shareContent()
-//        }
-//        btnBack.setOnClickListener {
-//            NavigationManager.navigateBack(this.activity)
-//        }
-    }
-
-    private fun getTitleTextView(toolbar: Toolbar): Any? {
-        try {
-            val toolbarClass = Toolbar::class.java
-            val titleTextViewField = toolbarClass.getDeclaredField("mTitleTextView")
-            titleTextViewField.isAccessible = true
-
-            return titleTextViewField.get(toolbar)
-        } catch (e: NoSuchFieldException) {
-            e.printStackTrace()
-        } catch (e: IllegalAccessException) {
-            e.printStackTrace()
+        imgBack.setOnClickListener {
+            NavigationManager.navigateBack(this.activity)
         }
-        return null
-    }
-
-    override fun shareContent() {
-        val shareIntent = Intent()
-        shareIntent.action = Intent.ACTION_SEND
-        shareIntent.type = "text/plain"
-        shareIntent.putExtra(Intent.EXTRA_TEXT, movie.original_title)
-        startActivity(Intent.createChooser(shareIntent, getString(R.string.send_to)))
     }
 }
